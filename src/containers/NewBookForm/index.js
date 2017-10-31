@@ -1,3 +1,5 @@
+//NewBookForm - index.js
+
 import React, {Component} from 'react';
 
 class NewBookForm extends Component {
@@ -5,15 +7,20 @@ class NewBookForm extends Component {
     super(props);
 
     this.state = {
-      titleInput: ''
+      titleInput: '',
+      authorInput: ''
     }
+
+    this.handleChangeTitle = this.handleChangeTitle.bind(this);
+
+    this.handleChangeAuthor = this.handleChangeAuthor.bind(this);
   }
 
 handleSubmit(event){
   event.preventDefault();
   console.log(this.state.titleInput);
 
-  this.props.addNewBookForm(this.state.titleInput);
+  this.props.addNewBook(this.state.titleInput, this.state.authorInput);
 }
 
 handleChangeTitle(event){
@@ -31,8 +38,9 @@ handleChangeAuthor(event){
   render(){
     return(
       <div>
-        <form>
-          <input type="text" placeholder="Title" onChange={this.handleSubmit.bind(this)} />
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <input type="text" placeholder="Title" onChange={this.handleChangeTitle} />
+          <input type="text" placeholder="Author" onChange={this.handleChangeAuthor} />
           <input type="submit" value="Submit" />
         </form>
       </div>
