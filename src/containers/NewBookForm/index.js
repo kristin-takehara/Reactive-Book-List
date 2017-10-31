@@ -6,10 +6,10 @@ class NewBookForm extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
+      this.state = {
       titleInput: '',
       authorInput: ''
-    }
+      }
 
     this.handleChangeTitle = this.handleChangeTitle.bind(this);
 
