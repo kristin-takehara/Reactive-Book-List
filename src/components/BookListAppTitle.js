@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const AppTitle = ({ title }) => {
+const BookListAppTitle = ({ title }) => {
   return(
     <div className="appTitle">
       <h1>{ title }</h1>
@@ -10,4 +10,4 @@ const AppTitle = ({ title }) => {
   );
 }
 
-export default AppTitle;
+export default BookListAppTitle;
